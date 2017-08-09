@@ -1,0 +1,8 @@
+<h1>Create a New Product</h1>
+<form action="" (submit)="createProduct()">
+  Title: <input type="text" name="title" required minLength="4" [(ngModel)]="product.title" #titleCtrl="ngModel">
+  Price: <input type="number" name="price"required [(ngModel)]="product.price" #priceCtrl="ngModel">
+  Image Url: <input type="text" name="imgUrl"[(ngModel)]="product.imgUrl" #imgUrlCtrl="ngModel">
+   <input *ngIf="titleCtrl.valid" type="submit" value="CREATE">
+   <input *ngIf="!titleCtrl.valid" type="submit" value="CREATE" disabled>
+</form>
